@@ -14,6 +14,14 @@ func main() {
 		os.Exit(2)
 	}
 	path := os.Args[1]
+	fmt.Printf(`---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: %s
+type: Opaque
+data:
+`, path)
 	if err := filepath.Walk(path, encode); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
