@@ -10,7 +10,7 @@ import (
 
 func main() {
 	if len(os.Args) == 1 {
-		fmt.Printf("usage: %s <direcotry path>", os.Args[0])
+		fmt.Printf("usage: %s <direcotry path>\n", os.Args[0])
 		os.Exit(2)
 	}
 	path := os.Args[1]
