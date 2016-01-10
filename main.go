@@ -10,10 +10,18 @@ import (
 
 func main() {
 	if len(os.Args) == 1 {
-		fmt.Printf("usage: %s <direcotry path>", os.Args[0])
+		fmt.Printf("usage: %s <direcotry path>\n", os.Args[0])
 		os.Exit(2)
 	}
 	path := os.Args[1]
+	fmt.Printf(`---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: %s
+type: Opaque
+data:
+`, filepath.Base(path))
 	if err := filepath.Walk(path, encode); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
