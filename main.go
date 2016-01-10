@@ -21,7 +21,7 @@ metadata:
   name: %s
 type: Opaque
 data:
-`, path)
+`, filepath.Base(path))
 	if err := filepath.Walk(path, encode); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
