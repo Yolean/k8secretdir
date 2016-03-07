@@ -1,5 +1,7 @@
 # k8secretdir - easier secrets encoding
 
+`go get github.com/Yolean/k8secretdir`
+
 Kubernetes [secret definitions](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/secrets.md) require all data elements to be base64-encoded.
 
 This little tool is meant to simplify writing those definitions. You give it a path, it recursively walks it and outputs all files base64-encoded in YAML syntax.
